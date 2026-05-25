@@ -1,0 +1,15 @@
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\bin\Debug\net8.0\E_Commerce.Application.deps.json
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\bin\Debug\net8.0\E_Commerce.Application.dll
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\bin\Debug\net8.0\E_Commerce.Application.pdb
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\bin\Debug\net8.0\E_Commerce.Domain.dll
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\bin\Debug\net8.0\E_Commerce.Domain.pdb
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\obj\Debug\net8.0\E_Commerce.Application.csproj.AssemblyReference.cache
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\obj\Debug\net8.0\E_Commerce.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\obj\Debug\net8.0\E_Commerce.Application.AssemblyInfoInputs.cache
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\obj\Debug\net8.0\E_Commerce.Application.AssemblyInfo.cs
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\obj\Debug\net8.0\E_Commerce.Application.csproj.CoreCompileInputs.cache
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\obj\Debug\net8.0\E_Commer.4B0C5673.Up2Date
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\obj\Debug\net8.0\E_Commerce.Application.dll
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\obj\Debug\net8.0\refint\E_Commerce.Application.dll
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\obj\Debug\net8.0\E_Commerce.Application.pdb
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Application\obj\Debug\net8.0\ref\E_Commerce.Application.dll

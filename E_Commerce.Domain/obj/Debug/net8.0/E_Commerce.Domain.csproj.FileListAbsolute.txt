@@ -1,0 +1,11 @@
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Domain\bin\Debug\net8.0\E_Commerce.Domain.deps.json
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Domain\bin\Debug\net8.0\E_Commerce.Domain.dll
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Domain\bin\Debug\net8.0\E_Commerce.Domain.pdb
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Domain\obj\Debug\net8.0\E_Commerce.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Domain\obj\Debug\net8.0\E_Commerce.Domain.AssemblyInfoInputs.cache
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Domain\obj\Debug\net8.0\E_Commerce.Domain.AssemblyInfo.cs
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Domain\obj\Debug\net8.0\E_Commerce.Domain.csproj.CoreCompileInputs.cache
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Domain\obj\Debug\net8.0\E_Commerce.Domain.dll
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Domain\obj\Debug\net8.0\refint\E_Commerce.Domain.dll
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Domain\obj\Debug\net8.0\E_Commerce.Domain.pdb
+E:\Projects\E_commerceOrderManagementAPI\E_Commerce\E_Commerce.Domain\obj\Debug\net8.0\ref\E_Commerce.Domain.dll
