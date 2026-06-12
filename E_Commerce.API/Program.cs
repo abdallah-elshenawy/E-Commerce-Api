@@ -28,7 +28,7 @@ namespace E_Commerce.API
 
             builder.Services.AddAuthorization();
 
-            builder.Services.AddAutoMapper(config => config.AddProfile<MappingProfiles>());
+            builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
             builder.Services.AddHangfire(config => config.UseSqlServerStorage(
                 builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddHangfireServer();

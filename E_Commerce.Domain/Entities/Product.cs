@@ -32,7 +32,7 @@ namespace E_Commerce.Domain.Entities
         }
         public int StockQuantity { get; private set; }
         public ICollection<OrderItem> OrderItems { get; private set; } = new List<OrderItem>();
-        public byte[] RowVersion { get; private set; }
+        public byte[] RowVersion { get; private set; } = Array.Empty<byte>();
         public void IncreaseStock(int quantity)
         {
             if (quantity < 0)
@@ -56,7 +56,7 @@ namespace E_Commerce.Domain.Entities
         public void UpdateDetails(string name, decimal price, string description)
         {
             Name = name;
-            Price = price > 0 ? price : 0;
+            Price = price;
             Description = description;
         }
 

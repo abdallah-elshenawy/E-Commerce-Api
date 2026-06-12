@@ -91,11 +91,11 @@ namespace E_Commerce.API.Middleware
             }
             catch (DbUpdateConcurrencyException ex)
             {
-                _logger.LogError("Concurrency exception: {Message}", ex.Message);
+                _logger.LogWarning("Concurrency conflict on request {Path}", context.Request.Path);
                 ErrorResponse errorResponse = new ErrorResponse()
                 {
                     StatusCode = 409,
-                    Message = ex.Message
+                    Message = "The resource was modified by another request. Please retry."
                 };
 
                 context.Response.StatusCode = errorResponse.StatusCode;

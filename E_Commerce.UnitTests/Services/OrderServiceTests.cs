@@ -140,7 +140,7 @@ namespace E_Commerce.UnitTests.Services
         [Fact]
         public async Task GetOrderByIdAsync_OrderIsNotFound_ReturnsNull()
         {
-            _unitOfWorkMock.Setup(u => u.OrderRepository.GetByIdAsync(It.IsAny<int>())).ReturnsAsync((Order?)null);
+            _unitOfWorkMock.Setup(u => u.OrderRepository.GetOrderWithItemsAsync(It.IsAny<int>())).ReturnsAsync((Order?)null);
 
             var actual = await _orderService.GetOrderByIdAsync(5);
 
@@ -151,13 +151,12 @@ namespace E_Commerce.UnitTests.Services
         public async Task GetOrderByIdAsync_OrderExist_ReturnsValidOrderDto()
         {
             Order order = new Order(1);
-            _unitOfWorkMock.Setup(u => u.OrderRepository.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(order);
+            _unitOfWorkMock.Setup(u => u.OrderRepository.GetOrderWithItemsAsync(It.IsAny<int>())).ReturnsAsync(order);
             _mapperMock.Setup(m => m.Map<OrderDto>(It.IsAny<Order>())).Returns(new OrderDto());
 
             var actual = await _orderService.GetOrderByIdAsync(5);
 
             actual.Should().NotBeNull();
-
         }
     }
 }

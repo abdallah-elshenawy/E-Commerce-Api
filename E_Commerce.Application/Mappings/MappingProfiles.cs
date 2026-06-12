@@ -19,7 +19,7 @@ namespace E_Commerce.Application.Mappings
                 .ForMember(dest => dest.TotalPrice, opt => opt.MapFrom(src => src.CalculateTotalPrice()));
 
             CreateMap<OrderItem, OrderItemDto>()
-                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.Name ?? string.Empty));
+                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product != null ? src.Product.Name : string.Empty));
         }
     }
 }
