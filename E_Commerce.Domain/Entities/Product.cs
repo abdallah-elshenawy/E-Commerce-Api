@@ -4,49 +4,61 @@ namespace E_Commerce.Domain.Entities
 {
     public class Product : BaseEntity
     {
-
-        private Product() { } // this is for EF Core, to prevent direct instantiation without using the constructor with parameters.
+        private string _name;
+        private decimal _price;
+        private int _stockQuantity;
+        private int _categoryId;
+        private Product() { }
                              
-        public Product(string name, string description, decimal price, int stockQuantity)
+        public Product(string name, string description, decimal price, int stockQuantity, int categoryId)
         {
             Name = name;
             Description = description;
             Price = price;
             StockQuantity = stockQuantity;
+            CategoryId = categoryId;
         }
 
-        private decimal _price;
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public decimal Price
+        public string Name
         {
-            get { return _price; }
-            private set
+            get => _name;
+            set
             {
-                if (value < 0)
-                {
-                    throw new DomainException("Price cannot be negative.");
-                }
-                _price = value;
+                _name = !string.IsNullOrWhiteSpace(value) ? value
+                        : throw new DomainException("The name cannot be null or empty.");
             }
         }
-        public int StockQuantity { get; private set; }
+        public decimal Price
+        {
+            get => _price;
+            set
+            {
+                _price = value >= 0 ? value
+                        : throw new DomainException("The price cannot be 0.");
+            }
+        }
+        public int StockQuantity
+        {
+            get => _stockQuantity;
+            set
+            {
+                _stockQuantity = value >= 0 ? value
+                        : throw new DomainException("The stock quantity cannot be 0.");
+            }
+        }
+        public string Description { get; private set; }
         public ICollection<OrderItem> OrderItems { get; private set; } = new List<OrderItem>();
         public byte[] RowVersion { get; private set; } = Array.Empty<byte>();
+
+        public int CategoryId { get; private set; }
+        public Category Category { get; private set; }
+
         public void IncreaseStock(int quantity)
         {
-            if (quantity < 0)
-            {
-                throw new DomainException("Amount must be positive.");
-            }
             StockQuantity += quantity;
         }
         public void ReduceStock(int quantity)
         {
-            if (quantity < 0)
-            {
-                throw new DomainException("Amount must be positive.");
-            }
             if (StockQuantity - quantity < 0)
             {
                 throw new InsufficientStockException(Id, quantity, StockQuantity);
@@ -59,6 +71,9 @@ namespace E_Commerce.Domain.Entities
             Price = price;
             Description = description;
         }
-
+        public void ChangeProductCategory(int newCategoryId)
+        {
+            CategoryId = newCategoryId;
+        }
     }
 }

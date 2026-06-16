@@ -1,8 +1,13 @@
 ﻿
+using E_Commerce.Domain.Exceptions;
+
 namespace E_Commerce.Domain.Entities
 {
     public class Customer : BaseEntity
     {
+        private string _firstName;
+        private string _lastName;
+        private string _email;
         private Customer() { }   
         public Customer(string firstName, string lastName, string email)
         {
@@ -12,9 +17,33 @@ namespace E_Commerce.Domain.Entities
             CreatedAt = DateTime.UtcNow;
         }
 
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
-        public string Email { get; private set; }
+        public string FirstName
+        {
+            get => _firstName;
+            set
+            {
+                _lastName = !string.IsNullOrWhiteSpace(value) ? value
+                            : throw new DomainException("The first name cannot be null or empty.");
+            }
+        }
+        public string LastName
+        {
+            get => _lastName;
+            set
+            {
+                _lastName = !string.IsNullOrWhiteSpace(value) ? value
+                            : throw new DomainException("The last name cannot be null or empty.");
+            }
+        }
+        public string Email
+        {
+            get => _email;
+            set
+            {
+                _email = !string.IsNullOrWhiteSpace(value) ? value
+                            : throw new DomainException("The email cannot be null or empty.");
+            }
+        }
         public string PasswordHash { get; private set; }
         public void SetPassword(string passwordHash)
         {

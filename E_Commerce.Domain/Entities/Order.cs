@@ -1,8 +1,10 @@
 ﻿using E_Commerce.Domain.Enums;
+using E_Commerce.Domain.Exceptions;
 namespace E_Commerce.Domain.Entities
 {
     public class Order : BaseEntity
     {
+        private int _customerId;
         private Order() { }  
         public Order(int customerId)
         {
@@ -11,7 +13,15 @@ namespace E_Commerce.Domain.Entities
             Status = OrderStatus.Pending;
         }
 
-        public int CustomerId { get; private set; }
+        public int CustomerId
+        {
+            get => _customerId;
+            set
+            {
+                _customerId = value >= 1 ? value
+                            : throw new DomainException("The customer ids start from 1.");
+            }
+        }
         public Customer Customer { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public OrderStatus Status { get; private set; }
