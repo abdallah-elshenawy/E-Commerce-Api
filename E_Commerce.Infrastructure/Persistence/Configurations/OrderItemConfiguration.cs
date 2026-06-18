@@ -9,8 +9,8 @@ namespace E_Commerce.Infrastructure.Persistence.Configurations
         public void Configure(EntityTypeBuilder<OrderItem> builder)
         {
             builder.HasKey(oi => oi.Id);
-            builder.Property(oi => oi.Quantity).IsRequired();
-            builder.Property(oi => oi.UnitPrice).HasColumnType("decimal(18,2)").IsRequired();
+            builder.Property(oi => oi.Quantity).IsRequired(true);
+            builder.Property(oi => oi.UnitPrice).HasColumnType("decimal(18,2)").IsRequired(true);
             builder.HasOne(oi => oi.Product)
                     .WithMany(p => p.OrderItems)
                     .HasForeignKey(oi => oi.ProductId)

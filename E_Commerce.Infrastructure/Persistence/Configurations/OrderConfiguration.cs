@@ -9,8 +9,8 @@ namespace E_Commerce.Infrastructure.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Order> builder)
         {
             builder.HasKey(o => o.Id);
-            builder.Property(o => o.CustomerId).IsRequired();
-            builder.Property(o => o.CreatedAt).IsRequired();
+            builder.Property(o => o.CustomerId).IsRequired(true);
+            builder.Property(o => o.CreatedAt).IsRequired(true);
             builder.Property(o => o.Status).HasConversion<string>().HasMaxLength(50);
             builder.HasMany(o => o.OrderItems)
                     .WithOne(oi => oi.Order)

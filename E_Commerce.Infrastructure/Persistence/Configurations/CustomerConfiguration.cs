@@ -9,11 +9,11 @@ namespace E_Commerce.Infrastructure.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.HasKey(c => c.Id);
-            builder.Property(c => c.FirstName).HasMaxLength(100).IsRequired();
-            builder.Property(c => c.LastName).HasMaxLength(100).IsRequired();
-            builder.Property(c => c.Email).HasMaxLength(256).IsRequired();
+            builder.Property(c => c.FirstName).HasMaxLength(100).IsRequired(true);
+            builder.Property(c => c.LastName).HasMaxLength(100).IsRequired(true);
+            builder.Property(c => c.Email).HasMaxLength(256).IsRequired(true);
             builder.HasIndex(c => c.Email).IsUnique();
-            builder.Property(c => c.CreatedAt).IsRequired();
+            builder.Property(c => c.CreatedAt).IsRequired(true);
             builder.HasMany(c => c.Orders)
                     .WithOne(o => o.Customer)
                     .HasForeignKey(o => o.CustomerId)
