@@ -57,7 +57,7 @@ namespace E_Commerce.UnitTests.Services
         [Fact]
         public async Task GetProductById_CacheMissAndProductExist_ReturnsProductDto()
         {
-            Product product = new Product("product", "desc", 100m, 20);
+            Product product = new Product("product", "desc", 100m, 20, 1);
             _cacheMock.Setup(c => c.GetAsync<ProductDto>(It.IsAny<string>())).ReturnsAsync((ProductDto?)null);
             _unitOfWorkMock.Setup(u => u.ProductRepository.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(product);
             _mapperMock.Setup(m => m.Map<ProductDto>(product)).Returns(new ProductDto());
@@ -74,7 +74,7 @@ namespace E_Commerce.UnitTests.Services
         {
             
             
-            Product product = new Product("product", "desc", 100m, 20);
+            Product product = new Product("product", "desc", 100m, 20, 1);
             _cacheMock.Setup(c => c.GetAsync<ProductDto>(It.IsAny<string>())).ReturnsAsync((ProductDto?)null);
             _unitOfWorkMock.Setup(u => u.ProductRepository.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(product);
             _mapperMock.Setup(m => m.Map<ProductDto>(product)).Returns(new ProductDto());
@@ -93,7 +93,7 @@ namespace E_Commerce.UnitTests.Services
             {
                 Description = "desc", Name = "product", Price = 100m, StockQuantity = 20
             };
-            Product product = new Product("product", "desc", 100m, 20);
+            Product product = new Product("product", "desc", 100m, 20, 1);
             ProductDto productDto = new ProductDto()
             {
                 Description = "desc", Name = "product", Price = 100m, StockQuantity = 20
@@ -147,7 +147,7 @@ namespace E_Commerce.UnitTests.Services
         public async Task UpdateProductAsync_ProductIsFound_UpdateAndSaveAreCalledOnceAndRemoveCacheCalledTwice()
         {
             
-            Product product = new Product("product", "desc", 100m, 20);
+            Product product = new Product("product", "desc", 100m, 20, 1);
             _unitOfWorkMock.Setup(u => u.ProductRepository.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(product);
             _unitOfWorkMock.Setup(u => u.ProductRepository.Update(It.IsAny<Product>()));
 
@@ -181,7 +181,7 @@ namespace E_Commerce.UnitTests.Services
         {
             
             
-            Product product = new Product("product", "desc", 100m, 20);
+            Product product = new Product("product", "desc", 100m, 20, 1);
             _unitOfWorkMock.Setup(u => u.ProductRepository.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(product);
             _unitOfWorkMock.Setup(u => u.ProductRepository.Delete(It.IsAny<Product>()));
 

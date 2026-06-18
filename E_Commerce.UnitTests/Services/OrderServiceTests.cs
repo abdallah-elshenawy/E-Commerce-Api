@@ -43,8 +43,8 @@ namespace E_Commerce.UnitTests.Services
 
             List<Product> products = new List<Product>
             {
-                new Product("product1", "desc", 100m, 20) { Id = 1 },
-                new Product("product2", "desc", 100m, 20) { Id = 2 },
+                new Product("product1", "desc", 100m, 20, 1) { Id = 1 },
+                new Product("product2", "desc", 100m, 20, 1) { Id = 2 },
             };
             _unitOfWorkMock.Setup(u => u.ProductRepository.GetProductsByIdsAsync(It.IsAny<List<int>>())).ReturnsAsync(products);
 
@@ -77,8 +77,8 @@ namespace E_Commerce.UnitTests.Services
             _unitOfWorkMock.Setup(u => u.CustomerRepository.GetByIdAsync(It.IsAny<int>())).ReturnsAsync((customer));
             List<Product> products = new List<Product>
             {
-                new Product("product1", "desc", 100m, 20) { Id = 1 },
-                new Product("product2", "desc", 100m, 20) { Id = 2 },
+                new Product("product1", "desc", 100m, 20, 1) { Id = 1 },
+                new Product("product2", "desc", 100m, 20, 1) { Id = 2 },
             };
             _unitOfWorkMock.Setup(u => u.ProductRepository.GetProductsByIdsAsync(It.IsAny<List<int>>())).ReturnsAsync(products);
             PlaceOrderDto placeOrderDto = new PlaceOrderDto
@@ -110,8 +110,8 @@ namespace E_Commerce.UnitTests.Services
             _unitOfWorkMock.Setup(u => u.CustomerRepository.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(customer);
             List<Product> products = new List<Product>
             {
-                new Product("product1", "desc", 100m, 20) { Id = 1 },
-                new Product("product2", "desc", 100m, 20) { Id = 2 },
+                new Product("product1", "desc", 100m, 20, 1) { Id = 1 },
+                new Product("product2", "desc", 100m, 20, 1) { Id = 2 },
             };
             _unitOfWorkMock.Setup(u => u.ProductRepository.GetProductsByIdsAsync(It.IsAny<List<int>>())).ReturnsAsync(products);
             _unitOfWorkMock.Setup(u => u.OrderRepository.Add(It.IsAny<Order>()));
